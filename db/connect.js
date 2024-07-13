@@ -9,7 +9,6 @@ async function main(){
         console.log(`Erro: ${error}`)
     }
 
-    console.log('conectado ao banco')
 }
 
 module.exports = main;
