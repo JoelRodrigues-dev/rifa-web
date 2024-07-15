@@ -7,10 +7,14 @@ const { getUserId } = require("./controllers/user/getUserId");
 const { updateUser } = require("./controllers/user/updateUser");
 const { deleteUser } = require("./controllers/user/deleteUser");
 const { loginUser } = require("./controllers/user/loginUser");
+const { getRaffles } = require("./controllers/raffles/getRaffles");
+const { createRaffle } = require("./controllers/raffles/createRaffle");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// rotas de usuario;
 
 app.get("/usuario", getAllUser);
 app.get("/usuario/:id", getUserId);
@@ -18,6 +22,11 @@ app.post("/usuario", createUser);
 app.post("/login", loginUser);
 app.put("/usuario/:id", updateUser);
 app.delete("usuario/:id", deleteUser);
+
+// rotas de rifas;
+
+app.get("/rifas", getRaffles);
+app.post("/rifas", createRaffle);
 
 connect()
   .then(() =>
