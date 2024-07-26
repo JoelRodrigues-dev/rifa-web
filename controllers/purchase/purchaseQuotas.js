@@ -3,7 +3,7 @@ const User = require("../../models/User");
 const Ticket = require("../../models/Ticket");
 const Raffle = require("../../models/Raffle");
 const generateQRCode = require("../../utils/generateQrCode");
-const pagoparConfig = require("../../config/pagopar");
+const pagoparConfig = require("../../pagopar/pagopar");
 
 const purchaseQuota = async (req, res) => {
   const { name, ci, phone, raffleId } = req.body;
